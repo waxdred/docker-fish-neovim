@@ -1,0 +1,16 @@
+version: '3'
+services:
+  neovim:
+    build:
+      args:
+        ssh_pub_key: "${SSH_PUB_KEY}"
+    volumes:
+      - ${WORKSPACE_DIR}:/root/workspace
+      - ./config:/root/.config
+      - ./local:/root/.local
+      - /tmp/nvimsocket:/tmp/nvimsocket
+    stdin_open: true
+    tty: true
+    ports:
+      - "2222:22"
+    restart: always
