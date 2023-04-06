@@ -4,6 +4,7 @@ ARG ssh_pub_key
 # Installe les dépendances de Neovim
 RUN apk add --update lua cmake ninja bash make neovim git go nodejs npm python3 python3-dev build-base py3-pip util-linux
 
+RUN apk add git cmake make clang build-base llvm-static llvm-dev clang-static clang-dev
 RUN apk add fish curl
 RUN pip3 install neovim
 
