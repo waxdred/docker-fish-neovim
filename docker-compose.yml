@@ -2,6 +2,8 @@ version: '3'
 services:
   neovim:
     build:
+      context: .
+      dockerfile: Dockerfile
       args:
         ssh_pub_key: "${SSH_PUB_KEY}"
     volumes:
